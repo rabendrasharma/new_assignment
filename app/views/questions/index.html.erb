@@ -1,0 +1,23 @@
+<h1>Questions</h1>
+<div style="float: right;"><%= button_to "Ask Question", new_question_path, method: :get %></div>
+<div>
+  <h3>Questions</h3>
+  <% @questions&@questions.each do |question| %>
+
+    <div><h3><%= question.question %></h3>
+    </br><span>Posted By: <%= question.user.email %> 
+      <%= button_to "Follow User", follow_path(followee_id: question.user.id, follower_type: "User") %>
+      <%= button_to "Follow Topic", follow_path(followee_id: question.topic.id, follower_type: "Topic") %>
+      </span>
+    <div id="All-answers">
+      <% answers = question.answers %>
+      <% answers&answers.each do |answer| %>
+        <div style="background: grey;"><%= answer.answer %>
+          </br>Posted By: <%= answer.user.email %>
+        </div>
+      <% end %>
+    </div>
+    <div id="answer-<%= question.id %>"></div>
+    <%= link_to "Answer", new_answer_path(question_id: question.id), method: :get, remote: true %>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<h1>Home</h1>
+<div style="float: right;"><%= link_to "Questions", questions_path %></div>
+<% if current_user %>
+  <%= link_to "My Questions", my_questions_path %>
+  <%= link_to "My Answers", my_answers_path %>
+  <%= link_to "My Topics", my_topics_path %>
+  <%= link_to "My Following", my_followings_path %>
+<% end %>

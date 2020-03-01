@@ -1,0 +1,8 @@
+<h1>Followings</h1>
+<% if @topics.present? %>
+  <% @topics.each do |topic| %>
+    <%= topic %>
+  <% end %>
+<% else %>
+  No topics following by u.
+<% end %>

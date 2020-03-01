@@ -1,0 +1,10 @@
+<h1>My Answers </h1>
+<% if @followings.present? %>
+  <% @followings.each do |following| %>
+    <h3>
+      <%= following %>
+    </h3>
+  <% end %>
+<% else %>
+  No Followings found
+<% end %>

@@ -1,0 +1,10 @@
+<h1>My Answers </h1>
+<% if @answers.present? %>
+  <% @answers.each do |answer| %>
+    <h3>
+      <%= answer.answer %>
+    </h3>
+  <% end %>
+<% else %>
+No Answers found
+<% end %>

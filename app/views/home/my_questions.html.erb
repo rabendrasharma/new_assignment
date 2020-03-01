@@ -1,0 +1,10 @@
+<h1>My Questions </h1>
+<% if @questions.present? %>
+  <% @questions&@questions.each do |question| %>
+    <h3>
+      <%= question.question %>
+    </h3>
+  <% end %>
+<% else %>
+  No question asked by u found.
+<% end %>

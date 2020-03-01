@@ -1,0 +1,1 @@
+$("#answer-<%= params[:question_id] %>").html("<%= escape_javascript(render partial: 'new', locals: { question_id: params[:question_id] } ) %>")

@@ -1,0 +1,6 @@
+<h1>Questions#new</h1>
+<%= form_for @question do |f| %>
+  <%= select_tag :topic_id, options_for_select(Question::TOPICS.invert.map{|k,v| [k,v]})%>
+  <%= f.text_area :question %>
+  <%= f.submit %>
+<% end %>
